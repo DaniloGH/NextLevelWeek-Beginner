@@ -95,7 +95,7 @@
 }
 
 #page-give-classes main footer button:hover {
-  background: var(--color-scondary-dark);
+  background: var(--color-secondary-dark);
 }
 
 .schedule-item+.schedule-item {

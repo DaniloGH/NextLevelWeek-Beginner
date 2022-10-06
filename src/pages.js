@@ -22,7 +22,7 @@ async function pageStudy(req, res) {
       SELECT class_schedule.*
       FROM class_schedule
       WHERE class_schedule.class_id = "1"
-      AND class_shedule.weekday = ${filters.weekday}
+      AND class_schedule.weekday = ${filters.weekday}
       AND class_schedule.time_from <= ${timeToMinutes}
       AND class_schedule.time_to > ${timeToMinutes}
     )
@@ -33,7 +33,7 @@ async function pageStudy(req, res) {
     const db = await Database
     const proffys = await db.all(query)
 
-    proffys.map((proffys)=> {
+    proffys.map((proffy)=> {
       proffy.subject = getSubject(proffy.subject)
     })
 

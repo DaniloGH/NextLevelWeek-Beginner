@@ -33,6 +33,6 @@ function convertHoursToMinutes(time) {
 module.exports = {
   subjects, 
   weekdays,
-  getSubject, 
+  getSubject,
   convertHoursToMinutes
 }

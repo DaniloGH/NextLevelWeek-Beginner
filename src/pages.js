@@ -42,15 +42,9 @@ async function pageStudy(req, res) {
     console.log(error)
   }
 }
+
 function pageGiveClasses(req, res) {
-  const data = req.body
-  const isNotEmpty = Object.keys(data).length > 0
-  if(isNotEmpty){
-    data.subject = getSubject(data.subject)
-    proffys.push(data)
-    return res.redirect("/study")
-  }
-  return res.render("give-classes.html", { subjects, weekdays })
+  return res.render("give-classes.html", {subjects, weekdays})
 }
 
 async function saveClasses(req, res) {
@@ -80,7 +74,7 @@ async function saveClasses(req, res) {
     const db = await Database
     await createProffy(db, { proffyValue, classValue, classScheduleValues })
     let queryString = "?subject=" + req.body.subject
-    queryString += "&wekday=" + req.body.weekday[0]
+    queryString += "&weekday=" + req.body.weekday[0]
     queryString += "&time=" + req.body.time_from[0]
     return res.redirect('/study' + queryString)
   } catch (error) {

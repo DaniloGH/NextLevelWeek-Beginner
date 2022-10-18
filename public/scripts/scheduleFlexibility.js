@@ -21,7 +21,7 @@ function verifyFilling() { // Verifica se todos os campos estão preenchidos
   if(allSelectFieldsFilled&&allInputFieldsFilled){
     addFields(); // Adiciona um novo schedule-item (novo horário)
   } else {
-    alert('Preencha os dados em aberto antes de adicionar um novo horário.');
+    alert('Preencha os horários em aberto antes de adicionar um novo horário.');
   }
 }
 
@@ -35,3 +35,13 @@ function addFields() {
 }
 
 //////////////* REMOVE TIME FEATURE *////////////////////////
+function removeSchedule(element) {
+  const hoursSection = document.querySelector('#schedule-items');
+  const numberHoursSections = hoursSection.querySelectorAll('.schedule-item');
+  if(numberHoursSections.length > 1){
+    element.closest("div").remove();
+  } else {
+    alert('NÃO PERMITIDO: É preciso ter no mínimo um horário disponível.');
+  }
+
+}

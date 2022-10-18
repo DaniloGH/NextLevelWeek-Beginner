@@ -120,7 +120,7 @@
 }
 
 .material-symbols-outlined.remove-item:hover {
-  color: #707070;
+  color: var(--color-small-info);
 }
 
 @media (min-width: 700px) {
